@@ -1,0 +1,26 @@
+mixin stages-container(props)
+	-var props = props || {};
+	-var titleEnabled = props.titleEnabled || 'true';
+	-var title = props.title || 'stage';
+
+	//-
+
+	case titleEnabled
+		when 'true'
+			section.stages
+				.stages__title
+					+chapter__title(title)
+
+				.stages__container
+					+stage
+		default
+			.stages__container
+				+stage
+
+//- templates for mixin
+//- section.stages
+//-   .stages__title
+//-     +chapter__title('stages')
+
+//-   .stages__container
+//-     +stage

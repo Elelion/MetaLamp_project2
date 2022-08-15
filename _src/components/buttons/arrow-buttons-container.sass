@@ -1,0 +1,73 @@
+.arrows-buttons
+	+flex-enabled
+	width: auto
+	height: auto
+	margin: 0 auto 2.4rem auto
+	+border-black
+	flex-direction: column
+
+	@media screen and (max-width: 375px)
+		width: 100%
+
+	&__title
+		width: auto
+		height: auto
+		margin: 5rem auto 0 auto
+		+border-blue
+
+		@media screen and (max-width: 375px)
+			width: 25rem
+
+		& > .chapter__title-font
+			margin: 1.5rem 0 0 2.2rem
+			letter-spacing: 0.45rem
+
+			@media screen and (max-width: 375px)
+				margin-left: 0
+
+	&__list
+		+flex-enabled
+		width: auto
+		height: auto
+		margin: 6.5rem auto 0 auto
+		+border-blue
+		justify-content: center
+
+		@media screen and (max-width: 1250px)
+			+flex-disabled
+
+	&__item
+		width: 40.3rem
+		min-width: 32rem
+		height: 19rem
+		margin-right: 0.1rem
+		+border-green
+
+		@media screen and (max-width: 430px)
+			width: auto
+			min-width: 0
+
+		// first/last-child - fixing, adjust the design for the layout
+		&:first-child
+			margin-left: 1rem
+
+			@media screen and (max-width: 1250px)
+				margin-left: 0
+
+		&:last-child
+			margin-right: 0
+
+	&__container
+		float: left
+		width: auto
+		height: auto
+		margin-top: 1.8rem
+		+border-black
+
+		&:first-child
+			margin-left: 2.5rem
+			margin-right: 5.4rem
+
+			@media screen and (max-width: 430px)
+				margin-left: 0.5rem
+				margin-right: 0.5rem

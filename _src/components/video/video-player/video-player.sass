@@ -1,0 +1,318 @@
+// FIXME: video-player - check the path, when importing the block to other projects
+//$pathUrl: './components/video/video-player/images/videoPlayer.png'
+$pathUrl: './assets/images/videoPlayer.png'
+
+$colorGrayLight: #E5E5E5
+$colorRed: #E75735
+$colorTurquoise: #4EB7A8
+
+/**/
+
+.video-player
+	width: 162.4rem
+	height: auto
+	margin: 0.4rem
+	+border-blue
+
+	@media screen and (max-width: 1660px)
+		width: 100%
+		height: auto
+		margin: 0.4rem auto 0.4rem auto
+
+	&__poster
+		position: absolute
+		width: auto
+		margin: 5rem 5rem
+		+border-blue
+		+user-select-disabled
+
+		@media screen and (max-width: 1660px)
+			width: 100rem
+
+		@media screen and (max-width: 1150px)
+			width: 70rem
+
+		@media screen and (max-width: 830px)
+			width: 40rem
+			height: 12rem
+			margin: 1rem
+
+		@media screen and (max-width: 560px)
+			width: 35rem
+
+		@media screen and (max-width: 420px)
+			width: 26rem
+
+	&__title
+		width: 150rem
+		margin: 2.2rem 0 0 4.8rem
+
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+
+		font-weight: 700
+		font-size: 9.6rem
+		text-align: left
+		letter-spacing: -0.46rem
+		word-spacing: -0.1rem
+		line-height: 10.8rem
+		color: white
+
+		@media screen and (max-width: 1660px)
+			width: auto
+			font-size: 6rem
+
+		@media screen and (max-width: 1150px)
+			line-height: 6rem
+
+		@media screen and (max-width: 920px)
+			margin-top: 1rem
+			font-size: 4rem
+
+		@media screen and (max-width: 560px)
+			font-size: 3rem
+
+		@media screen and (max-width: 420px)
+			margin-left: .5rem
+
+	&__description
+		width: 150rem
+		margin: .2rem 0 0 4.8rem
+		padding-left: .6rem
+
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+
+		// FIXME: to check the fonts when you export
+		+font-family-bold
+		font-size: 3.4rem
+		text-align: left
+		word-spacing: 0.58rem
+		letter-spacing: 0.36rem
+		text-transform: uppercase
+		color: white
+
+		@media screen and (max-width: 1660px)
+			width: auto
+
+		@media screen and (max-width: 1150px)
+			margin-top: 2rem
+
+		@media screen and (max-width: 920px)
+			font-size: 2.5rem
+
+		@media screen and (max-width: 830px)
+			visibility: hidden
+
+	&__link
+		width: 150rem
+		margin: 6.8rem 0 0 4.8rem
+		padding-left: .6rem
+
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+
+		font-size: 4.6rem
+		text-align: left
+		line-height: 3.6rem
+		word-spacing: -0.1rem
+		font-weight: 700
+		color: white
+
+		@media screen and (max-width: 1660px)
+			width: auto
+
+		@media screen and (max-width: 1150px)
+			margin-top: 2rem
+
+		@media screen and (max-width: 920px)
+			font-size: 3.5rem
+
+		@media screen and (max-width: 830px)
+			visibility: hidden
+
+		& a
+			transition: all 0.5s
+			text-decoration: none
+			color: white
+			-webkit-transition: all 0.5s
+
+			&:hover
+				transition: all 0.5s
+				color: $colorTurquoise
+				-webkit-transition: all 0.5s
+
+
+	&__control-panel
+		+flex-enabled
+		position: absolute
+		height: auto
+		margin: 79rem auto 0 auto
+		+border-red
+		border-bottom-left-radius: 1.7rem
+		border-bottom-right-radius: 1.7rem
+		opacity: 0.8
+		background: black
+		justify-content: space-between
+
+		@media screen and (max-width: 1660px)
+			width: 113rem
+			margin-top: 51.1rem
+
+		@media screen and (max-width: 1150px)
+			width: 91rem
+			margin-top: 38.8rem
+
+		@media screen and (max-width: 920px)
+			width: 78rem
+			margin-top: 31.3rem
+
+		@media screen and (max-width: 830px)
+			width: 55.5rem
+			margin-top: 18.8rem
+
+		@media screen and (max-width: 560px)
+			width: 37.5rem
+			margin-top: 21.2rem
+			opacity: 1
+
+		@media screen and (max-width: 420px)
+			width: 30.5rem
+			margin-top: 17rem
+
+	&__play
+		float: left
+		width: 4rem
+		min-height: 4rem
+		margin: 4.4rem 4.4rem
+		border: none
+		background: url($pathUrl) no-repeat -46px -14px
+		cursor: pointer
+
+		@media screen and (max-width: 420px)
+			margin-left: 2rem
+
+		&:active
+			transform: scale(0.9)
+
+
+	/* slider range */
+	&__slider
+		+appearance-disabled
+		z-index: 1
+		width: 131.5rem
+		height: 1rem
+		margin: 5.8rem 6rem 0 0
+		border-radius: 1rem
+		outline: none
+		cursor: pointer
+		background: $colorGrayLight
+
+		@media screen and (max-width: 1660px)
+			width: 100%
+
+		@media screen and (max-width: 1150px)
+			width: 50rem
+
+		@media screen and (max-width: 920px)
+			width: 40rem
+
+		@media screen and (max-width: 830px)
+			width: 20rem
+
+		@media screen and (max-width: 560px)
+			width: 10rem
+
+		@media screen and (max-width: 420px)
+			width: 6rem
+
+		/* pointer */
+		&::-webkit-slider-thumb
+			width: 1.6rem
+			height: 1.6rem
+			border: none
+			border-radius: 1.6rem
+			cursor: pointer
+			outline: none
+			background-image: url($pathUrl)
+			background-position: -14px -26px
+			+appearance-disabled
+
+		&::-moz-range-thumb
+			width: 1.6rem
+			height: 1.6rem
+			border: none
+			border-radius: 1.6rem
+			cursor: pointer
+			outline: none
+			background-image: url($pathUrl)
+			background-position: -14px -26px
+
+		&::-moz-range-track
+			width: 71.5rem
+			height: 1rem
+			border-radius: 0.4rem
+			outline: none
+			background: $colorGrayLight
+
+			@media screen and (max-width: 1100px)
+				width: auto
+
+			@media screen and (max-width: 1150px)
+				width: 50rem
+
+			@media screen and (max-width: 920px)
+				width: 40rem
+
+			@media screen and (max-width: 830px)
+				width: 20rem
+
+			@media screen and (max-width: 560px)
+				width: 10rem
+
+			@media screen and (max-width: 420px)
+				width: 6rem
+
+	&__fullscreen
+		float: right
+		width: 11.9rem
+		min-height: 12.4rem
+		+border-red
+		border-bottom-right-radius: 1.7rem
+		background: $colorRed
+
+		@media screen and (max-width: 560px)
+			width: 8rem
+
+		&-video
+			width: 7.8rem
+			min-height: 7.8rem
+			margin: 2.2rem 2.2rem
+			border: none
+			cursor: pointer
+			background: url($pathUrl) no-repeat -146px 0px
+
+			@media screen and (max-width: 560px)
+				margin-left: .3rem
+
+			&:hover
+				background-position: -232px 0px
+
+			&:active
+				transform: scale(0.9)
+				background-position: -314px 0px
+
+	&__source
+		width: 100%
+		height: auto
+		+border-green
+		border-radius: 1.7rem
+
+		@media screen and (max-width: 1660px)
+			height: auto
+
+		@media screen and (max-width: 560px)
+			border-radius: 1.7rem 1.7rem 0 0

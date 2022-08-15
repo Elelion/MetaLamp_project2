@@ -1,0 +1,94 @@
+mixin calendar
+	.calendar
+		.calendar__chapter
+			#currentDay.calendar__day
+
+			.calendar__button-month.calendar__back-month
+				p.calendar__set-mapping  <
+			.calendar__button-month.calendar__foward-month
+				p.calendar__set-mapping  >
+
+			.calendar__month
+
+		#calendar.calendar__content
+
+		//- mixin, look in templates/button-standard
+		+button({
+			caption: 'today',
+			extension: 'calendar'})
+
+//-
+
+//- templates for mixin
+//- .calendar
+//- 	.calendar__chapter
+//- 		#currentDay.calendar__day
+//- 			.calendar__day-title 24
+
+//- 	.calendar__button-month.calendar__back-month
+//- 		p.calendar__set-mapping  &lt;
+
+//- 	.calendar__button-month.calendar__foward-month
+//- 		p.calendar__set-mapping  &gt;
+
+//- 	.calendar__month
+//- 		.calendar__month-title March
+
+//- 	#calendar.calendar__content
+//- 		table.calendar__list-year
+//- 			tbody
+//- 				tr
+//- 					th.calendar__list-month MON
+//- 					th.calendar__list-month TUE
+//- 					th.calendar__list-month WED
+//- 					th.calendar__list-month THU
+//- 					th.calendar__list-month FRI
+//- 					th.calendar__list-month SAT
+//- 					th.calendar__list-month SUM
+//- 				tr
+//- 					td.calendar__disabled
+//- 						.calendar__disabled-day 25
+//- 					td.calendar__disabled
+//- 						.calendar__disabled-day 26
+//- 					td.calendar__disabled
+//- 						.calendar__disabled-day 27
+//- 					td.calendar__disabled
+//- 						.calendar__disabled-day 28
+//- 					td.calendar__cell 1
+//- 					td.calendar__cell 2
+//- 					td.calendar__cell 3
+//- 				tr
+//- 					td.calendar__cell 4
+//- 					td.calendar__cell 5
+//- 					td.calendar__cell 6
+//- 					td.calendar__cell 7
+//- 					td.calendar__cell 8
+//- 					td.calendar__cell 9
+//- 					td.calendar__cell 10
+//- 				tr
+//- 					td.calendar__cell 11
+//- 					td.calendar__cell 12
+//- 					td.calendar__cell 13
+//- 					td.calendar__cell 14
+//- 					td.calendar__cell 15
+//- 					td.calendar__cell 16
+//- 					td.calendar__cell 17
+//- 				tr
+//- 					td.calendar__cell 18
+//- 					td.calendar__cell 19
+//- 					td.calendar__cell 20
+//- 					td.calendar__cell 21
+//- 					td.calendar__cell 22
+//- 					td.calendar__cell 23
+//- 					td#currentDate.calendar__cell 24
+//- 				tr
+//- 					td.calendar__cell 25
+//- 					td.calendar__cell 26
+//- 					td.calendar__cell 27
+//- 					td.calendar__cell 28
+//- 					td.calendar__cell 29
+//- 					td.calendar__cell 30
+//- 					td.calendar__cell 31
+//- 				tr
+//- 	form
+//- 		button.button-standard.button-standard__size-standard.button-standard__color-green.button-standard__effect.button-standard__extension-calendar today

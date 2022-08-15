@@ -1,0 +1,92 @@
+mixin search-profile-container(props)
+	-var props = props || {};
+	-var searchTitleEnabled = props.searchTitleEnabled || 'true';
+	-var searchTitle = props.searchTitle || 'search / drop down';
+	-var searchFirstEnabled = props.searchFirstEnabled || 'true';
+	-var searchSecondEnabled = props.searchSecondEnabled || 'true';
+	-var searchFill = props.searchFill || 'true';
+	-
+		var searchValue = props.searchValue ||
+			`I've not found what I'm looking for...`;
+
+	-var dropDownQuantity = props.dropDownQuantity || 2;
+	-var dropDownEnabled = props.dropDownEnabled || 'true';
+	-var dropDownValue0 = props.dropDownValue0 || 'Choose An Option';
+	-var dropDownValue1 = props.dropDownValue1 || 'DataBase';
+	-var dropDownValue2 = props.dropDownValue2 || 'Engine';
+	-var dropDownValue3 = props.dropDownValue3 || '';
+	-var dropDownValue4 = props.dropDownValue4 || '';
+
+	-var profileTitleEnabled = props.profileTitleEnabled || 'true';
+	-var profileTitle = props.profileTitle || 'user search-profile';
+	-var profilePhotoNameTitle = props.profilePhotoNameTitle || 'Frodo';
+	-var profilePhotoRank = props.profilePhotoRank || 'developer';
+	-var profilePhotoName = props.profilePhotoName || 'Frodo';
+	-var profilePhotoAlt = props.profilePhotoAlt || 'frodo photos';
+	-var profilePhotoTitle = props.profilePhotoTitle || 'SEO words';
+	-var profileLink = props.profileLink || '../404/404.html';
+
+	//-
+
+	mixin search-drop
+		.search-profile__list
+			case searchFirstEnabled
+				when 'true'
+					.search-profile__item
+						+search
+
+			case searchSecondEnabled
+				when 'true'
+					.search-profile__item
+						+search({
+							value: searchValue,
+							fill: searchFill})
+
+			case dropDownEnabled
+				when 'true'
+					.search-profile__item
+						+drop-down({
+							quantity: dropDownQuantity,
+							value0: dropDownValue0,
+							value1: dropDownValue1,
+							value2: dropDownValue2,
+							value3: dropDownValue3,
+							value4: dropDownValue4})
+
+	//-
+
+	mixin profile
+		+user-profile
+		+user-profile({
+			name: profilePhotoNameTitle,
+			rank: profilePhotoRank,
+			photoName: profilePhotoName,
+			photoAlt: profilePhotoAlt,
+			photoTitle: profilePhotoTitle,
+			link: profileLink
+		})
+
+	//-
+
+	section.search-profile
+		case searchTitleEnabled
+			when 'true'
+				.search-profile__search
+					.search-profile__search-title
+						+chapter__title(searchTitle)
+					+search-drop
+			default
+				+search-drop
+
+		//-
+
+		.search-profile__profile
+			case profileTitleEnabled
+				when 'true'
+					.search-profile__profile-title
+						+chapter__title(profileTitle)
+					.search-profile__profile-content
+						+profile
+				default
+					.search-profile__profile-content
+						+profile

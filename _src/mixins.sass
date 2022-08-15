@@ -1,0 +1,72 @@
+// fonts
+
+@mixin font-family-normal
+	font-family: "LatoBold", "Arial", "sans-serif"
+
+@mixin font-family-bold
+	font-family: "PTsans75F", "Arial", "sans-serif"
+
+/**/
+
+// borders
+
+@mixin border-black
+	border: .1rem solid black
+	border-color: transparent
+
+@mixin border-green
+	border: .1rem solid green
+	border-color: transparent
+
+@mixin border-red
+	border: .1rem solid red
+	border-color: transparent
+
+@mixin border-blue
+	border: .1rem dotted blue
+	border-color: transparent
+
+/**/
+
+// general
+@mixin flex-enabled
+	-webkit-display: flex
+	-moz-display: flex
+	-ms-display: flex
+	-o-display: flex
+	display: flex
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+
+@mixin flex-disabled
+	-webkit-display: block
+	-moz-display: block
+	-ms-display: block
+	-o-display: block
+	display: block
+
+@mixin user-select-disabled
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	-o-user-select: none
+	user-select: none
+
+@mixin appearance-disabled
+	-webkit-appearance: none
+	-moz-appearance: none
+	-ms-appearance: none
+	-o-appearance: none
+	appearance: none
+
+@mixin transition-duration
+	-webkit-webkit-transition-duration: 0.7s
+	-moz-webkit-transition-duration: 0.7s
+	-ms-webkit-transition-duration: 0.7s
+	-o-webkit-transition-duration: 0.7s
+	webkit-transition-duration: 0.7s
+	transition-duration: 0.7s
+

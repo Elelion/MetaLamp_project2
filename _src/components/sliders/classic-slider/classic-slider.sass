@@ -1,0 +1,111 @@
+// FIXME: point - check the path, when importing the block to other projects
+//$pathUrl: './components/sliders/classic-slider/images/point.png'
+$pathUrl: './assets/images/classicSliderPoint.png'
+
+$colorGrayLight: #E5E5E5
+$colorRed: #E75735
+
+/**/
+
+.classic-slider
+	&__container
+		width: 74.1rem
+		min-height: 15rem
+		margin: 0
+		+border-green
+
+		@media screen and (max-width: 820px)
+			width: 99%
+
+	&__range
+		&-indicator
+			width: 9.3rem
+			height: 6.3rem
+			margin-top: 0.5rem
+			margin-left: 0
+			border-radius: 1.2rem
+			background: $colorRed
+			+transition-duration
+
+			/* triangle for indicator */
+			&::after
+				position: relative
+				content: ''
+
+				// position
+				left: 3.6rem
+				bottom: -1.6rem
+
+				// transparent border
+				border: 1rem solid transparent
+
+				// adding triangle
+				border-top: 1.2rem solid $colorRed
+
+		&-title
+			// FIXME: to check the fonts when you export
+			margin: 0
+			padding-top: 0.5rem
+			font-size: 4rem
+			+font-family-bold
+			text-align: center
+			text-transform: uppercase
+			color: white
+			+user-select-disabled
+
+	&__track
+		z-index: 2
+		width: 71.5rem
+		height: 1rem
+		margin: 4.4rem 0 0 2rem
+		border-radius: 1rem
+		background: $colorGrayLight
+		outline: none
+		cursor: pointer
+		+appearance-disabled
+
+		@media screen and (max-width: 1660px)
+			margin-left: 1rem
+
+		@media screen and (max-width: 820px)
+			width: 50rem
+			margin-right: 2rem
+
+		@media screen and (max-width: 560px)
+			width: 35rem
+
+		@media screen and (max-width: 420px)
+			width: 25rem
+
+		/* slider track -> pointer */
+		&::-webkit-slider-thumb
+			width: 5rem
+			height: 5rem
+			border: none
+			border-radius: 2.8rem
+			background: url($pathUrl) 5.5rem 5.5rem
+			cursor: pointer
+			outline: none
+			+appearance-disabled
+
+		&::-moz-range-thumb
+			width: 5rem
+			height: 5rem
+			border: none
+			border-radius: 2.8rem
+			background: url($pathUrl) 5.5rem 5.5rem
+			cursor: pointer
+			outline: none
+
+		&::-moz-range-track
+			width: 71.5rem
+			height: 1rem
+			border-radius: 0.4rem
+			background: $colorGrayLight
+			outline: none
+
+			@media screen and (max-width: 820px)
+				width: 95%
+
+			@media screen and (max-width: 375px)
+				width: 92%

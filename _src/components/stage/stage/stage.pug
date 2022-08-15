@@ -1,0 +1,9 @@
+mixin stage
+	.stage
+		.stage__position
+			.stage__range-fill
+
+			form
+				.stage__track
+					- for (let i = 1; i <= 6; i += 1)
+						div(class='stagePoint stage__track-point stage__track-font')= i

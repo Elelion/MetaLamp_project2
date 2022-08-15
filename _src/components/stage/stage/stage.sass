@@ -1,0 +1,92 @@
+$colorGrayLight: #E5E5E5
+$colorGray: #6F6F6F
+$colorRed: #E75735
+
+/**/
+
+.stage
+	+flex-enabled
+	width: 165rem
+	height: auto
+	margin: 0.4rem auto 0 auto
+	+border-blue
+	justify-content: center
+
+	@media screen and (max-width: 1660px)
+		width: 140rem
+
+	@media screen and (max-width: 1480px)
+		width: 100rem
+
+	@media screen and (max-width: 1050px)
+		width: 53.5rem
+
+	@media screen and (max-width: 560px)
+		width: 39rem
+
+	@media screen and (max-width: 420px)
+		width: 28.5rem
+
+	&__position
+		position: absolute
+		width: inherit
+		min-height: 10rem
+		margin: 1rem auto 1rem auto
+		+border-red
+
+	&__track
+		position: absolute
+
+		+flex-enabled
+		width: 98%
+		height: 1rem
+		margin: 0.1rem auto 0 auto
+		border-radius: 1rem
+		background: $colorGrayLight
+		justify-content: space-between
+		outline: none
+
+		&-point
+			z-index: 2
+			position: relative
+			top: -3.2rem
+			float: left
+			width: 7.8rem
+			height: 6.8rem
+			margin: 0 0 0 .1rem
+			border-radius: 50%
+			background: $colorGrayLight
+			cursor: pointer
+
+			@media screen and (max-width: 420px)
+				top: -1.8rem
+				width: 6.8rem
+				height: 4.8rem
+
+			&:first-child
+				margin-left: 0
+
+		&-font
+			padding-top: 1rem
+			font-size: 4rem
+			// FIXME: to check the fonts when you export
+			+font-family-bold
+			text-align: center
+			color: $colorGray
+			+user-select-disabled
+
+			@media screen and (max-width: 420px)
+				padding-top: 0
+
+	&__range
+		&-fill
+			position: absolute
+			z-index: 1
+
+			float: left
+			width: 1rem
+			height: 1rem
+			margin: 0.1rem 0 0 0
+			+border-red
+			border-radius: 1rem
+			background: $colorRed

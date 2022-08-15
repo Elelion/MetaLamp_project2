@@ -1,0 +1,52 @@
+mixin calendar-messaging-container(props)
+	-var props = props || {};
+	-var calendarTitleEnabled = props.calendarTitleEnabled || 'true';
+	-var calendarTitle = props.calendarTitle || 'calendar';
+
+	-var messagingTitleEnabled = props.messagingTitleEnabled || 'true';
+	-var messagingTitle = props.messagingTitle || 'messaging';
+	-var messagingName = props.messagingName || 'Sarah Brown';
+	-var messagingPhotoName = props.messagingPhotoName || 'Frodo';
+	-var messagingPhotoAlt = props.messagingPhotoAlt || 'frodo photos';
+	-var messagingPhotoTitle = props.messagingPhotoTitle || 'SEO words';
+	-var messagingButtonTitle = props.messagingButtonTitle || 'Reply';
+
+	//-
+
+	mixin messaging__item
+		+messaging({
+			name: messagingName,
+			photoName: messagingPhotoName,
+			photoAlt: messagingPhotoAlt,
+			photoTitle: messagingPhotoTitle,
+			buttonTitle: messagingButtonTitle
+		})
+
+	//-
+
+	section.calendar-messaging
+		.calendar-messaging__calendar
+			case calendarTitleEnabled
+				when 'true'
+					.calendar-messaging__calendar-title
+						+chapter__title(calendarTitle)
+
+					.calendar-messaging__calendar-content
+						+calendar
+				default
+					.calendar-messaging__calendar-content
+						+calendar
+
+		//-
+
+		.calendar-messaging__messaging
+			case messagingTitleEnabled
+				when 'true'
+					.calendar-messaging__messaging-title
+						+chapter__title(messagingTitle)
+
+					.calendar-messaging__messaging-content
+						+messaging__item
+				default
+					.calendar-messaging__messaging-content
+						+messaging__item
