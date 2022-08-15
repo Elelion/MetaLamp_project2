@@ -1,0 +1,49 @@
+// FIXME: buttonDown - check the path, when importing the block to other projects
+//$pathUrl: './components/search-profile/drop-down/images/dropDown.png'
+$pathUrl: './assets/images/drop-down.png'
+
+$colorGrayLight: #E5E5E5
+$colorGray: #6F6F6F
+
+/**/
+
+.drop__down
+	// FIXME: to check the fonts when you export
+	width: 78.6rem
+	height: 7.6rem
+	margin: 2rem 0 0 2rem
+	padding-right: 8rem
+	padding-left: 3.2rem
+	padding-top: 0
+	border: 0.1rem solid $colorGrayLight
+	border-radius: 0.7rem
+	font-size: 3.8rem
+	font-weight: 700
+	+appearance-disabled
+
+	overflow: hidden
+	text-overflow: ellipsis
+	white-space: nowrap
+
+	cursor: pointer
+	background: $colorGrayLight
+	background-image: url($pathUrl)
+	background-position: 0px -4px
+	background-repeat: no-repeat
+	background-position-x: 694px
+	color: $colorGray
+
+	@media screen and (max-width: 830px)
+		width: 49rem
+		background-position-x: 398px
+
+	@media screen and (max-width: 560px)
+		width: 35rem
+		font-size: 3rem
+		background-position-x: 258px
+
+	@media screen and (max-width: 420px)
+		width: 26rem
+		margin-left: 1rem
+		padding-right: 10rem
+		background-position-x: 168px

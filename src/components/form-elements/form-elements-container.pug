@@ -1,0 +1,91 @@
+mixin form-elements-container(props)
+	-var props = props || {};
+	-var generalTitleEnabled = props.generalTitleEnabled || 'true';
+	-var generalTitle = props.generalTitle || 'form elements';
+
+	-var feedBackEnabled = props.feedBackEnabled || 'true';
+	-var feedBackButtonTitle = props.feedBackButtonTitle || 'click me';
+
+	-var togglesTitle = props.togglesTitle || 'toggles';
+	-var togglesTitleEnabled = props.togglesTitleEnabled || 'true';
+	-var togglesEnabled = props.togglesEnabled || 'true';
+
+	-var tickTitleBoxes = props.tickTitleBoxes || 'tick boxes';
+	-var tickBoxesTitleEnabled = props.tickBoxesTitleEnabled || 'true';
+	-var tickBoxesEnabled = props.tickBoxesEnabled || 'true';
+
+	//-
+
+	mixin form-elements__feed-back
+		.form-elements__feed-back
+			+feed-back({buttonName: feedBackButtonTitle})
+
+	//-
+
+	mixin form-elements__toggless
+		case togglesTitleEnabled
+			when 'true'
+				.form-elements__toggles
+					.form-elements__toggles-title
+						+chapter__title(togglesTitle)
+						+toggles
+
+			default
+				.form-elements__toggles
+					+toggles
+
+	//-
+
+	mixin form-elements__ticks
+		case tickBoxesTitleEnabled
+			when 'true'
+				.form-elements__ticks
+					.form-elements__ticks-title
+						+chapter__title(tickTitleBoxes)
+						+tick-boxes
+
+			default
+				.form-elements__ticks
+				+tick-boxes
+
+	//-
+
+	case generalTitleEnabled
+		when 'true'
+			section.form-elements
+				.form-elements__title
+					+chapter__title(generalTitle)
+
+				.form-elements__content
+					if (feedBackEnabled === 'true')
+						+form-elements__feed-back
+
+					if (togglesEnabled === 'true')
+						+form-elements__toggless
+
+					if (tickBoxesEnabled === 'true')
+						+form-elements__ticks
+		default
+			.form-elements__content
+				+form-elements__feed-back
+				+form-elements__toggless
+				+form-elements__ticks
+
+//- templates for mixin
+//- section.form-elements
+//-   .form-elements__title
+//-     +chapter__title('form elements')
+
+//-   .form-elements__content
+//-     .form-elements__feed-back
+//-       +feed-back({buttonName: 'click me'})
+
+//-     .form-elements__toggles
+//-       .form-elements__toggles-title
+//-         +chapter__title('toggles')
+//-         +toggles
+
+//-     .form-elements__ticks
+//-       .form-elements__ticks-title
+//-         +chapter__title('tick boxes')
+//-         +tick-boxes

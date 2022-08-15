@@ -1,0 +1,10 @@
+.vscode
+refactoring-events
+
+src/.sass-cache
+src/styles.css.map
+
+./refactoring-events
+
+./node_modules
+./build

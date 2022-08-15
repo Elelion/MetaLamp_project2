@@ -1,0 +1,29 @@
+mixin location-container(props)
+	-var props = props || {};
+	-var locationTitleEnabled = props.locationTitleEnabled || 'true';
+	-var locationTitle = props.locationTitle || 'location';
+	-var locationEventName = props.locationEventName || 'Meet us!';
+	-
+		var locationAddress = props.locationAddress ||
+			`1259 california st san francisco, ca`;
+
+	//-
+
+	mixin map-location
+		+map({
+			eventName: locationEventName,
+			address: locationAddress
+		})
+
+	//-
+
+	section.location
+		case locationTitleEnabled
+			when 'true'
+				.location__title
+					+chapter__title(locationTitle)
+				.location__content
+					+map-location
+			default
+				.location__content
+					+map-location

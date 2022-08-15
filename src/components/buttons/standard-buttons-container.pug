@@ -1,0 +1,81 @@
+mixin standard-buttons-container(props)
+	-var props = props || {};
+	-var titleEnabled = props.titleEnabled || 'true';
+	-var title = props.title || 'standard buttons';
+	-var quantity = props.quantity || 3;
+
+	if ((quantity > 3) || (quantity < 1))
+		-quantity = 3;
+
+	//-
+
+	mixin buttons-block(props)
+		-var props = props || {};
+		-var sizeBlock = props.sizeBlock || 'small';
+		-var sizeButton = props.sizeButton || 'small';
+		-var colorButton = props.colorButton || 'green';
+		-var quantityButton = props.quantityButton || 3;
+
+		.standard-buttons__item
+			- for (let i = 0; i < quantityButton; i++)
+				case sizeBlock
+					when 'small'
+						.standard-buttons__small-block
+							+button({size: sizeButton,
+								color: colorButton})
+					when 'standard'
+						.standard-buttons__normal-block
+							+button({size: sizeButton,
+								color: colorButton})
+
+	//-
+
+	mixin buttons-list
+		+buttons-block({
+			quantityButton: quantity})
+
+		+buttons-block({
+			quantityButton: quantity,
+			sizeBlock: 'standard',
+			sizeButton: 'standard'})
+
+		+buttons-block({
+			quantityButton: quantity,
+			sizeBlock: 'standard',
+			sizeButton: 'standard',
+			colorButton: 'red'})
+
+		+buttons-block({
+			quantityButton: quantity,
+			sizeBlock: 'small',
+			sizeButton: 'small',
+			colorButton: 'red'})
+
+	//-
+
+	case titleEnabled
+		when 'true'
+			section.standard-buttons
+				.standard-buttons__title
+					+chapter__title(title)
+				.standard-buttons__list
+					+buttons-list
+		default
+			.standard-buttons__list
+				+buttons-list
+
+//-
+
+//- templates for mixin
+//- section.standard-buttons
+//-   .standard-buttons__title
+//-     +chapter__title('standard buttons')
+
+//-   .buttons-list
+//-     .standard-buttons__item
+//-       .standard-buttons__normal-block
+//-         +button-standard({color: 'red'})
+//-       .standard-buttons__normal-block
+//-         +button-standard({color: 'red'})
+//-       .standard-buttons__normal-block
+//-         +button-standard({color: 'red'})

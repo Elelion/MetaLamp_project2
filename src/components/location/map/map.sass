@@ -1,0 +1,158 @@
+// FIXME: mapSprite - check the path, when importing the block to other projects
+//$pathUrl: './components/location/map/images/mapSprite.png'
+$pathUrl: './assets/images/map-sprite.png'
+
+$colorRed: #E75735
+$colorTurquoise: #4EB7A8
+
+/**/
+
+.map
+	width: 100%
+	height: 55.6rem
+
+
+	&__info
+		width: auto
+		height: 19rem
+		+border-blue
+		border-bottom-right-radius: 0.7rem
+		border-bottom-left-radius: 0.7rem
+		background: $colorRed
+
+		@media screen and (max-width: 1150px)
+			height: auto
+
+		@media screen and (max-width: 920px)
+			+flex-enabled
+			flex-direction: column
+
+	// TODO: hot fix for reviewer! Google API key has become paid!
+	&__alert
+		position: absolute
+		margin-top: -20rem
+
+		& p
+			// FIXME: to check the fonts when you export
+			+font-family-bold
+			font-size: 4rem
+			text-align: center
+			color: $colorTurquoise
+			animation: flashAlertGoogleMap 2s infinite alternate
+
+			@keyframes flashAlertGoogleMap
+				40%
+					color: $colorRed
+
+				80%
+					color: white
+
+	&__event
+		float: left
+		width: 33rem
+		height: auto
+		margin: 3.6rem 0 0 6rem
+		+border-green
+
+		@media screen and (max-width: 920px)
+			width: auto
+			margin-left: auto
+			margin-right: auto
+
+		&-title
+			+user-select-disabled
+			margin: 0
+			padding: 0
+
+			overflow: hidden
+			text-overflow: ellipsis
+			white-space: nowrap
+
+			font-size: 8rem
+			letter-spacing: 0.06rem
+			text-align: center
+			font-weight: 700
+			color: white
+
+			@media screen and (max-width: 420px)
+				font-size: 6rem
+
+	&__address
+		float: left
+		width: 40rem
+		min-height: 10rem
+		margin: 4rem 0 0 4rem
+		+border-green
+		overflow: auto
+
+		@media screen and (max-width: 1150px)
+			margin-right: 6rem
+
+		@media screen and (max-width: 920px)
+			float: none
+			margin-left: auto
+			margin-right: auto
+
+		@media screen and (max-width: 560px)
+			width: auto
+
+		&-title
+			margin: 0.8rem 0 0 1.4rem
+
+			// FIXME: to check the fonts when you export
+			+font-family-bold
+			font-size: 3.4rem
+			text-align: left
+			line-height: 4.2rem
+			word-spacing: 0.6rem
+			letter-spacing: 0.09rem
+			text-transform: uppercase
+			color: white
+
+	&__control
+		float: right
+		width: 23.5rem
+		height: 8rem
+		margin: 5.2rem 4rem 0 0
+		+border-blue
+
+		@media screen and (max-width: 1150px)
+			float: none
+			clear: both
+			margin: 15.2rem auto 2rem auto
+
+		@media screen and (max-width: 920px)
+			float: none
+			margin-top: 3rem
+
+	&__element
+		float: left
+		width: 7rem
+		height: 8rem
+		+border-green
+		cursor: pointer
+
+		// FIXIT: replace -px for +px, redrawing sprite for it!!!
+		&-target
+			margin-left: 2.2rem
+			background-image: url($pathUrl)
+			background-position: -4px 0px
+
+			&:hover
+				background-position: -82px 0px
+
+			&:active
+				transform: scale(0.9)
+				transition: 0.1s
+
+		&-marker
+			margin-left: 4.8rem
+			background-image: url($pathUrl)
+			background-position: 132px -1px
+
+			&:hover
+				background-position: 67px -2px
+
+			&:active
+				transform: scale(0.9)
+				transition: 0.1s
