@@ -5,11 +5,11 @@ The project is divided into elements in accordance with the BEM methodology
 <br>
 <br>
 I have used the following technologies here:
-- pug,
-- sass,
-- JS,
-- webpack
-- and best practices
+- <span style="color: saddlebrown"> pug </span>,
+- <span style="color: indianred"> sass <span>,
+- <span style="color: yellow"> JS </span>,
+- <span style="color: deepskyblue"> WebPack </span>,
+- <span style="color: green"> and best practices </span>,
 
 ### for SASS BUILD:
 `sass ./src/styles.sass ./build/styles.css`
