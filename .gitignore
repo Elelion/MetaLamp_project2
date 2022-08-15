@@ -8,5 +8,5 @@ src/styles.css.map
 
 ./node_modules
 ./build
-./idea
+.idea
 _index.html
