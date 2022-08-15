@@ -1,0 +1,228 @@
+// FIXME: buttonDown - check the path, when importing the block to other projects
+//$pathUrl: './components/search-profile/user-profile/images/userProfile.png'
+$pathUrl: './assets/images/userProfile.png'
+
+$colorGrayLight: #E5E5E5
+$colorGray: #6F6F6F
+$colorRed: #E75735
+$colorTurquoise: #4EB7A8
+
+/**/
+
+.user-profile
+	width: 80.5rem
+	min-height: 32.5rem
+	margin: 0 auto 0.2rem auto
+	+border-red
+
+	@media screen and (max-width: 830px)
+		width: auto
+
+	@media screen and (max-width: 420px)
+		height: 37rem
+
+	&__photo
+		float: left
+		width: 23rem
+		height: 23rem
+		margin: 4.1rem 0 0 5.5rem
+		border: 1.5rem solid $colorGrayLight
+		border-radius: 50%
+
+		@media screen and (max-width: 830px)
+			width: 0
+			margin-left: 0
+			visibility: hidden
+
+	&__avatar
+		width: 23rem
+		min-height: 23rem
+		border-radius: 50%
+
+		@media screen and (max-width: 830px)
+			width: 0
+			margin-left: 0
+			visibility: hidden
+
+	&__info
+		/* for arrow */
+		position: relative
+		float: right
+		width: 44.4rem
+		height: 13.6rem
+		margin-top: 10rem
+		margin-right: 1.4rem
+		border-radius: 1.4rem
+		background: $colorGrayLight
+		+transition-duration
+
+		@media screen and (max-width: 830px)
+			float: none
+			margin-left: 4rem
+			margin-right: 0
+
+		@media screen and (max-width: 560px)
+			width: 33rem
+			margin-left: auto
+			margin-right: auto
+
+		@media screen and (max-width: 420px)
+			width: 27rem
+
+		/* arrow */
+		&:before
+			content: " "
+			position: absolute
+			top: 47%
+			right: 100%
+			left: -1rem
+			width: 2rem
+			min-height: 2rem
+			margin-top: -1.6rem
+			border: 1rem solid $colorGrayLight
+			border-radius: .5rem
+			pointer-events: none
+			background-color: $colorGrayLight
+			+transition-duration
+			transform: rotate(45deg)
+			-webkit-transform: rotate(45deg)
+
+			@media screen and (max-width: 830px)
+				visibility: hidden
+
+		&:hover:before
+			top: 47%
+			border-color: $colorTurquoise
+			background: $colorTurquoise
+
+		&:hover
+			height: 25.3rem
+			margin-top: 4.8rem
+			border: transparent
+			border-bottom-color: $colorGrayLight
+			border-top-color: $colorGrayLight
+			background: $colorTurquoise
+			+transition-duration
+
+			@media screen and (max-width: 420px)
+				height: 32rem
+
+		&:hover .user-profile__social
+			display: block
+			margin-top: 0
+			+transition-duration
+
+		&:hover .user-profile__name,
+		&:hover .user-profile__rank
+			color: white
+			+transition-duration
+
+	&__title
+		min-height: 13.5rem
+		+border-blue
+
+	&__name
+		width: 38rem
+		margin: 2rem 0 0 2.8rem
+		padding: 0
+
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+
+		font-size: 5rem
+		letter-spacing: 0.02rem
+		text-align: center
+		font-weight: 700
+		color: $colorRed
+		+user-select-disabled
+
+		@media screen and (max-width: 560px)
+			width: 30rem
+			margin-left: 1rem
+
+		@media screen and (max-width: 420px)
+			width: 21.5rem
+			margin-left: 0
+
+	&__rank
+		width: 30rem
+		margin: 0.2px auto 0 auto
+		font-size: 3rem
+		text-align: center
+		word-spacing: 0.6rem
+		letter-spacing: 0.18rem
+
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+
+		// FIXME: to check the fonts when you export
+		+font-family-bold
+		text-transform: uppercase
+		color: $colorGray
+		+user-select-disabled
+
+		@media screen and (max-width: 420px)
+			width: 21.5rem
+			margin-left: 1rem
+			text-overflow: ellipsis
+			white-space: nowrap
+			overflow: hidden
+			+border-red
+
+	&__social
+		display: none
+		min-height: 11.5rem
+		+border-red
+		+transition-duration
+
+		@media screen and (max-width: 420px)
+			height: auto
+
+		&-content
+			float: left
+			width: 10rem
+			height: auto
+			margin: 1rem auto 0 auto
+			+border-blue
+
+			&:first-child
+				margin-left: 7rem
+
+				@media screen and (max-width: 560px)
+					margin-left: 0.5rem
+
+			&:last-child
+				@media screen and (max-width: 420px)
+					margin-left: 5rem
+
+		&-facebook,
+		&-tweeter,
+		&-dribbble
+			background-image: url($pathUrl)
+			+transition-duration
+
+		&-facebook
+			background-position: 1rem -0.5rem
+
+			&:hover
+				background-position: 1rem -8.5rem
+
+		&-tweeter
+			background-position: -8.8rem -0.5rem
+
+			&:hover
+				background-position: -8.8rem -8.5rem
+
+		&-dribbble
+			background-position: -18rem -1rem
+
+			&:hover
+				background-position: -18rem -9rem
+
+		&-logo
+			display: block
+			width: 10rem
+			min-height: 7rem
+			+border-blue

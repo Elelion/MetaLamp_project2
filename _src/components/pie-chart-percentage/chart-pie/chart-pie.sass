@@ -1,0 +1,67 @@
+$colorGrayLight: #E5E5E5
+$colorGray: #6F6F6F
+$colorRed: #E75735
+$colorTurquoise: #4EB7A8
+
+/**/
+
+.chart-pie
+	float: left
+	position: relative
+	width: 26rem
+	height: 26rem
+	margin: 1.2rem 0 0 1.2rem
+	+border-green
+	border-radius: 50%
+
+	&::after
+		position: absolute
+		z-index: 50
+		content: ""
+		top: 17%
+		left: 17%
+		width: 65%
+		height: 65%
+		border-radius: 50%
+		+border-green
+		background-color: white
+		color: white
+
+	&__fragment
+		position: absolute
+		width: 100%
+		height: 100%
+		border-radius: 50%
+		background-color: $colorGray
+
+		&:nth-child(1)
+			clip: rect(0, 15rem, 15rem, 0)
+
+		&:nth-child(2)
+			clip: rect(0, 15rem, 15rem, 0)
+
+		&:nth-child(3)
+			clip: rect(0, 14.8rem, 14.5rem, 0)
+
+		&:nth-child(4)
+			clip: rect(0, 13rem, 19.5rem, 0)
+
+		&-gray
+			z-index: 10
+			background-color: $colorGray
+			transform: rotate(50deg)
+
+		&-red
+			z-index: 20
+			transform: rotate(140deg)
+			background-color: $colorRed
+
+		&-green
+			z-index: 41
+			transform: rotate(231deg)
+			background-color: $colorTurquoise
+
+		&-empty
+			z-index: 40
+			transform: rotate(360deg)
+			background-color: $colorGrayLight

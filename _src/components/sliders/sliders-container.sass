@@ -1,0 +1,43 @@
+.sliders
+	width: auto
+	height: auto
+	margin: 0 auto 2.6rem auto
+	+border-black
+
+	&__title
+		width: auto
+		height: auto
+		margin: 3rem auto 0 auto
+		+border-blue
+
+		& > .chapter__title-font
+			margin: 1.2rem 0 0 2.4rem
+			letter-spacing: .15rem
+
+	&__list
+		+flex-enabled
+		width: auto
+		height: auto
+		margin: 1.1rem auto 0 auto
+		+border-blue
+		justify-content: center
+
+		@media screen and (max-width: 1660px)
+			flex-direction: column
+
+	&__item
+		width: auto
+		height: auto
+		+border-blue
+
+		// fixing, adjust the design for the layout
+		&:first-child
+			margin-right: 17rem
+			margin-left: 0.4rem
+
+			@media screen and (max-width: 1660px)
+				margin: 0 auto 0 auto
+
+		&:last-child
+			@media screen and (max-width: 1660px)
+				margin: 0 auto 0 auto

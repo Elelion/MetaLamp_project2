@@ -1,0 +1,117 @@
+$colorGrayLight: #E5E5E5
+$colorGray: #6F6F6F
+$colorTurquoise: #4EB7A8
+
+/**/
+
+.toggles
+	+flex-enabled
+	+border-red
+	justify-content: center
+
+	@media screen and (max-width: 420px)
+		flex-direction: column
+
+	&__case
+		width: 16.2rem
+		min-height: 6.5rem
+		margin: 8rem 2.6rem 0.8rem 1.5rem
+
+		@media screen and (max-width: 420px)
+			margin: 2rem auto 0 auto
+
+		&:last-child
+			margin-right: 1.4rem
+			margin-bottom: 2rem
+
+			@media screen and (max-width: 420px)
+				margin-right: auto
+
+	// toggle -> switcher -> checkbox OFF
+	&__switch
+		display: none
+
+		// paint over the field with a circle
+		&:checked + .toggles__label:before
+			background-color: $colorTurquoise
+
+		// move circle
+		&:checked + .toggles__label:after
+			transform: translateX(9.6rem)
+
+		// the average status of the slider on the reverse movement
+		// when the button is pinched
+		&:checked + .toggles__label:active:after
+			transform: translateX(7rem)
+
+		// change the color of the field when the LMB is clamped and
+		// the slider goes back
+		&:checked + .toggles__label:active:before
+			background-color: $colorTurquoise
+			opacity: 0.5
+
+	&__label
+		position: relative
+		display: inline-block
+		padding-left: 5rem
+		transition: color 0.1s linear
+		cursor: pointer
+		font-size: 1.4rem
+		vertical-align: top
+		color: $colorGray
+
+		& span
+			z-index: 3
+			position: absolute
+			padding: 1rem 0 0 2.4rem
+
+		// creating switcher
+		&:before
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 1
+			width: 16.2rem
+			min-height: 6.5rem
+			margin: 0
+			border-radius: 5rem
+			display: block
+			content: ""
+			transition: background-color 0.1s linear
+			background: $colorGrayLight
+
+		// creating circle / pointer for switcher
+		&:after
+			position: absolute
+			top: 0.1rem
+			left: 0.1rem
+			z-index: 2
+			width: 5rem
+			min-height: 5rem
+			margin: 0.6rem 0 0 0.8rem
+			border-radius: 50%
+			display: block
+			transition: transform 0.1s linear
+			content: ""
+			background-color: white
+
+		// when press on pointer and hold click
+		&:active:after
+			transform: translateX(3rem)
+
+		// middle pointer + hold click
+		&:active:before
+			background-color: $colorTurquoise
+			opacity: 0.5
+
+	&__status
+		padding-top: 1rem
+
+		// FIXME: to check the fonts when you export
+		+font-family-bold
+
+		font-size: 3.2rem
+		text-align: center
+		letter-spacing: 0.4rem
+		color: white
+		+user-select-disabled

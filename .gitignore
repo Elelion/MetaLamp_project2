@@ -5,6 +5,15 @@ src/.sass-cache
 src/styles.css.map
 
 ./refactoring-events
-
 ./node_modules
 ./build
+./_src
+
+index.pug
+_index.html
+main.js
+webpack.config.js
+yarn.lock
+yarn-error.log
+package.json
+package-lock.json

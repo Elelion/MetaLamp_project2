@@ -1,0 +1,52 @@
+mixin arrows-buttons-container(props)
+	-var props = props || {};
+	-var titleEnabled = props.titleEnabled || 'true';
+	-var title = props.title || 'arrow buttons';
+	-var quantity = props.quantity || 3;
+
+	-var typeButton = props.typeButton || 'arrow';
+	-var leftButtonDirection = props.leftButtonDirection || 'left';
+	-var rightButtonDirection = props.rightButtonDirection || 'right';
+
+	if ((quantity > 3) || (quantity < 1))
+		-quantity = 3;
+
+	//-
+
+	mixin buttons-block
+		.arrows-buttons__list
+			- for (let i = 0; i < quantity; i++)
+				.arrows-buttons__item
+					.arrows-buttons__container
+						+button({
+							type: typeButton,
+							direction: leftButtonDirection})
+					.arrows-buttons__container
+						+button({
+							type: typeButton,
+							direction: rightButtonDirection})
+
+	//-
+
+	case titleEnabled
+		when 'true'
+			section.arrows-buttons
+				.arrows-buttons__title
+					+chapter__title(title)
+				+buttons-block
+		default
+			+buttons-block
+
+//-
+
+//- templates for mixin
+//- section.arrows-buttons
+//-   .arrows-buttons__title
+//-     +chapter__title(title)
+
+//-   .arrows-buttons__list
+//-     .arrows-buttons__item
+//-       .arrows-buttons__container
+//-         +button-arrow
+//-       .arrows-buttons__container
+//-         +button-arrow({direction: 'right'})

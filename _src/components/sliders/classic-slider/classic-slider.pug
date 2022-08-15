@@ -1,0 +1,29 @@
+mixin classic-slider(props)
+	-var props = props || {};
+	-var type = props.type || 'classic';
+
+	case type
+		when 'classic'
+			-var stepSlider = '0';
+
+		when 'stepByStep'
+			-type = 'classic'
+			-var stepSlider = '5';
+
+		default
+			-type = 'classic'
+			-var stepSlider = '0';
+
+	//-
+
+	div(class=type + '-slider__container')
+		div(class=type + '-slider__range-indicator')
+			p(class=type + '-slider__range-title') 0
+
+		form
+			input(class=type + '-slider__track'
+				type= 'range',
+				min= '0',
+				max= '100',
+				value= '0',
+				step= stepSlider)

@@ -1,0 +1,10 @@
+mixin chart(props)
+	-var props = props || {};
+	-var value = props.value || '17.5';
+
+	//-
+
+	.chart-percentages
+		.chart-percentages__value
+			p.chart-percentages__title= value
+		.chart-percentages__draw-svg= value + '%'

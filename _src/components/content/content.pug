@@ -1,0 +1,183 @@
+body
+	main.content
+		section.content__block.content__standard-buttons
+			+standard-buttons-container
+
+		section.content__block.content__arrow-buttons
+			+arrows-buttons-container
+
+		section.content__block.content__charts
+			+pie-percentages-container
+
+		section.content__block.content__sliders
+			+sliders-container
+			+sliders-container({titleEnabled: 'false'})
+
+		section.content__block.content__stages
+			+stages-container
+
+		section.content__block.content__form-elements
+			+form-elements-container
+
+		section.content__block.content__profile
+			+search-profile-container
+
+		section.content__block.content__news-events
+			+news-events-container
+
+		section.content__block.content__location
+			+location-container
+
+		section.content__block.content__calendar-messaging
+			+calendar-messaging-container
+
+		section.content__block.content__video
+			+video-container
+
+
+//- **
+
+//- Documentation:
+//- format for all objects: ({props: 'value', props: number})
+//- if any props is NOT specified, value will be - the default
+
+//- ---
+
+//- standard-buttons:
+//-   	titleEnabled: 'true'/'false',
+//-   	title: 'text',
+//-   	quantity: 1-3
+
+//- ---
+
+//- arrows-buttons:
+//-   	titleEnabled: 'true'/'false',
+//-   	title: 'text',
+//-   	quantity: 1-3,
+//- 	typeButton: 'arrow'/'standard',
+//-   	leftButtonDirection: 'left'/'right',
+//-   	rightButtonDirection: 'left'/'right'
+
+//- ---
+
+//- percentages-pie:
+//-   	titleEnabled: 'true'/'false',
+//-   	title: 'text',
+//-   	quantity: 1-4,
+//-   	firstChart: 0 - 100,
+//-   	secondChart: 0 - 100,
+//-   	thirdChart: 0 - 100,
+//-   	fourthChart: 0 - 100
+
+//- ---
+
+//- sliders:
+//-   	titleEnabled: 'true'/'false',
+//-   	title: 'text',
+//-   	classicSliderEnabled: 'true'/'false',
+//-   	classicSliderType: 'classic'/'stepByStep',
+//-   	stepSliderEnabled: 'true'/'false'
+
+//- ---
+
+//- stages:
+//-   	titleEnabled: 'true'/'false',
+//-   	title: 'text'
+
+//- ---
+
+//- form-elements:
+//-   	generalTitleEnabled: 'true'/'false',
+//-   	generalTitle: 'text',
+
+//-   	feedBackEnabled: 'true'/'false',
+//-   	feedBackButtonTitle: 'text',
+
+//-   	togglesTitle: 'text',
+//-   	togglesTitleEnabled: 'true'/'false',
+//-   	togglesEnabled: 'true'/'false',
+
+//-   	tickTitleBoxes: 'text',
+//-   	tickBoxesTitleEnabled: 'true'/'false',
+//-   	tickBoxesEnabled: 'true'/'false'
+
+//- ---
+
+//- search-profile
+//- 	searchTitleEnabled: 'true'/'false',
+//- 	searchTitle: 'text,
+//- 	searchFirstEnabled: 'true'/'false',
+//- 	searchSecondEnabled: 'true'/'false',
+//- 	searchValue: `text`,
+//- 	searchFill: 'true'/'false',
+
+//- 	dropDownQuantity: 0...4,
+//- 	dropDownEnabled: 'true'/'false',
+//- 	dropDownValue0: 'text',
+//- 	dropDownValue1: 'text',
+//- 	dropDownValue2: 'text',
+//- 	dropDownValue3: 'text',
+//- 	dropDownValue4: 'text',
+
+//- 	profileTitleEnabled: 'true'/'false',
+//- 	profileTitle: 'text',
+//- 	profilePhotoNameTitle: 'text',
+//- 	profilePhotoRank: 'text',
+//- 	profilePhotoName: 'namePictureInFolder',
+//- 	profilePhotoAlt: 'SEO alt text',
+//- 	profilePhotoTitle: 'SEO words text',
+//- 	profileLink: '../404/404.html - analog way'
+
+//- ---
+
+//- news-events
+//- 	title: 'text',
+//- 	titleEnabled: 'true'/'false',
+
+//- 	newsPhotoPosterName: 'namePictureInFolder',
+//- 	newsPhotoAlt: 'SEO alt text',
+//- 	newsPhotoTitle: 'SEO words text',
+//- 	newsTitle: 'text',
+//- 	newsData: 'text',
+//- 	newsDescription: `text`,
+
+//- 	eventsPhotoPosterName: 'namePictureInFolder',
+//- 	eventsPhotoAlt: 'SEO alt text',
+//- 	eventsPhotoTitle: 'SEO words text',
+//- 	eventsDay: '1 ...-... 31',
+//- 	eventsMonth: 'first three letters of the month',
+//- 	eventsTitle: 'text',
+//- 	eventsDescription: `text`,
+//- 	EventsButtonName: 'text'
+
+//- ---
+
+//- location
+//- 	locationTitleEnabled: 'true'/'false',
+//- 	locationTitle: 'text',
+//- 	locationEventName: 'text',
+//- 	locationAddress: `text`
+
+//- ---
+
+//- calendar-messaging
+//- 	calendarTitleEnabled: 'true'/'false',
+//- 	calendarTitle: 'text',
+//- 	messagingTitleEnabled: 'true'/'false',
+//- 	messagingTitle: 'text',
+//- 	messagingName: 'text',
+//- 	messagingPhotoName: 'namePictureInFolder',
+//- 	messagingPhotoAlt: 'SEO alt text',
+//- 	messagingPhotoTitle: 'SEO words text',
+//- 	messagingButtonTitle: 'text'
+
+//- ---
+
+//- video
+//- 	titleEnabled: 'true'/'false',
+//- 	title: 'text',
+//- 	posterTitle: 'text',
+//- 	posterDescription: 'text',
+//- 	posterLink: 'link',
+//- 	videoSource: 'video src... (src/video/text.mp4)',
+//- 	videoPoster: 'image src... (src/assets/images/test.jpg)'
